@@ -246,3 +246,19 @@ function to1p()
 {
     document.getElementById("home").scrollIntoView(true);
 }
+function sendMail(params)
+{
+var tempParams={
+    from_name:document.getElementById("name").value,
+    to_name:document.getElementById("numn").value,
+    message:document.getElementById("quer").value
+
+};
+emailjs.send('service_tt2ugpl', 'template_k4v6uhu',tempParams)
+                    .then(function(res) {
+                        console.log('SUCCESS!',res,);
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+
+}
